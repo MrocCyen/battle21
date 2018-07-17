@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// 全局配置
+/// </summary>
 public static class GlobalConfig
 {
     /// <summary>

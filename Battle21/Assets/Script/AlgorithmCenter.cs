@@ -2,8 +2,12 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// 算法中心
+/// </summary>
 public class AlgorithmCenter
 {
+	//操作的对象
     private GameObject _gameObject;
 
     public AlgorithmCenter(GameObject gameObject)
@@ -11,6 +15,11 @@ public class AlgorithmCenter
         _gameObject = gameObject;
     }
 
+	/// <summary>
+	/// 改变数字
+	/// </summary>
+	/// <param name="changeObj">Change object.</param>
+	/// <param name="targetBgCellObj">Target background cell object.</param>
     public void ChangeNumber(GameObject changeObj, GameObject targetBgCellObj)
     {
         NumberEntity entity = changeObj.GetComponent<NumberCell>().NumberEntity;
@@ -35,6 +44,9 @@ public class AlgorithmCenter
         scoreNumberObj.GetComponent<Animation>().Play("AnimationScoreRun");
     }
 
+	/// <summary>
+	/// 移动数字格子
+	/// </summary>
     public void MoveNumberCell()
     {
         int moveIndex = GlobalConfig.MoveNumberIndex;
@@ -59,6 +71,9 @@ public class AlgorithmCenter
         CommonToolkit.HideAllGuide();
     }
 
+	/// <summary>
+	/// 计算可以到达的格子的数量
+	/// </summary>
     public void CalculateGuideCount()
     {
         int row = _gameObject.GetComponent<NumberCell>().NumberEntity.Index / GlobalConfig.ColumnCount;
@@ -66,6 +81,11 @@ public class AlgorithmCenter
         Calculate(row, column);
     }
 
+	/// <summary>
+	/// 具体的计算算法
+	/// </summary>
+	/// <param name="rowIndex">Row index.</param>
+	/// <param name="columnIndex">Column index.</param>
     private void Calculate(int rowIndex, int columnIndex)
     {
         var guideFacade = new GuideDirectionFacade(rowIndex, columnIndex);

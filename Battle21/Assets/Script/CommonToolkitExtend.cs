@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System;
 
+/// <summary>
+/// 公共工具类
+/// </summary>
 public partial class CommonToolkit
 {
     public static bool HaveNumber(int locationNum)

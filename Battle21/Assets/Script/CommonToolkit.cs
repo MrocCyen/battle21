@@ -1,8 +1,15 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 公共工具类
+/// </summary>
 public partial class CommonToolkit
 {
+	/// <summary>
+	/// 获取所有的格子索引（位置）
+	/// </summary>
+	/// <returns>The all locations.</returns>
     private static List<int> GetAllLocations()
     {
         List<int> returnList = new List<int>();
@@ -12,7 +19,7 @@ public partial class CommonToolkit
         }
         return returnList;
     }
-
+		
     private static List<int> RecursionLocation(int recursionCount, List<int> recursionList, List<int> returnList)
     {
         if (recursionCount < 1 || GetNotHaveNumberCellCount() == returnList.Count)
@@ -37,6 +44,10 @@ public partial class CommonToolkit
         }
     }
 
+	/// <summary>
+	/// 生成随机数字
+	/// </summary>
+	/// <returns>The random numbers.</returns>
     public static List<int> GenerateRandomNumbers()
     {
         try
@@ -63,6 +74,10 @@ public partial class CommonToolkit
         }
     }
 
+	/// <summary>
+	/// 生成随机数字
+	/// </summary>
+	/// <returns>The random number.</returns>
     public static int GenerateRandomNumber()
     {
         try
@@ -78,6 +93,10 @@ public partial class CommonToolkit
         }
     }
 
+	/// <summary>
+	/// 生成随机位置
+	/// </summary>
+	/// <returns>The random locations.</returns>
     public static List<int> GenerateRandomLocations()
     {
         try
@@ -91,6 +110,10 @@ public partial class CommonToolkit
         }
     }
 
+	/// <summary>
+	/// 生成随机位置
+	/// </summary>
+	/// <returns>The random location.</returns>
     public static int GenerateRandomLocation()
     {
         try
